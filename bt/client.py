@@ -8,10 +8,11 @@ from conn import AcceptConnection
 from message import WireMessage
 from peer import Peer
 import logging
-import urllib2
+import urllib
 
 class Client(object):
     def __init__(self, torrent):
+        self.key = None
         self.logger = logging.getLogger('bt.peer.client')
         self.torrent = torrent
         self.peer_id = self._gen_peer_id()
@@ -31,7 +32,7 @@ class Client(object):
     def _new_peers(self, peer_list, client):
         """Return new Peer instances for each peer the tracker tells us about.
         """
-        own_ext_ip = urllib2.urlopen('http://ifconfig.me/ip').read() # HACK
+        own_ext_ip = urllib.request.urlopen('http://ifconfig.me/ip').read() # HACK
         return [Peer(p[0], p[1], client)
                 for p in peer_list if p[0] != own_ext_ip]
     def _get_peers(self, resp):
@@ -55,7 +56,7 @@ class Client(object):
             handshake = WireMessage.build_handshake(self, peer, self.torrent)
             try:
                 peer.conn.connect(peer.ip, peer.port)
-            except socket.error, e:
+            except socket.error as e:
                 self.logger.debug('Socket error while connecting to {}:{}: {}'
                     .format(peer.ip, peer.port, e))
             else:

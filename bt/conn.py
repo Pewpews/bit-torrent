@@ -62,7 +62,7 @@ class MsgConnection(object):
             return False
         try:
             bytes_sent = self.socket.send(msg)
-        except socket.error, e:
+        except socket.error as e:
             err = 'Failed to send message to {}:{}. Msg was {}.'.format(
                     self.ip, self.port, repr(msg))
             self.logger.error(e)
@@ -75,7 +75,7 @@ class MsgConnection(object):
         while True:
             try:
                 msg = self.socket.recv(4096)
-            except Exception, e:
+            except Exception as e:
                 self.parent.mark_bad()
                 self.logger.warning(
                         'recv() on {}:{}: {}'.format(
@@ -95,7 +95,7 @@ class MsgConnection(object):
                     func(*msg[1])
                 else:
                     func()
-            except AttributeError, e:
+            except AttributeError as e:
                 # Todo - make sure AttributeError actually relates to func()
                 self.logger.error('Error: Invalid msg type {}'.format(msg[0]))
                 raise Exception(e)

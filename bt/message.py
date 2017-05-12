@@ -107,7 +107,7 @@ class WireMessage(object):
         length = None
         try:
             length = cls.MESSAGE_TYPES[msg_id][2]
-        except IndexError, e:
+        except IndexError as e:
             # Match below --> constructing variable-length msg body
             if msg_id == 5:
                 # bitfield: <bitfield>
@@ -129,7 +129,7 @@ class WireMessage(object):
                 packed = struct.pack(fmt, length, msg_id)
             else:
                 packed = struct.pack(fmt, length, msg_id, *args)
-        except struct.error, e:
+        except struct.error as e:
             raise Exception('At struct error, args was', args, \
                 ', msg_id was', msg_id, \
                 ', fmt was', fmt, \

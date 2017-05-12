@@ -38,7 +38,7 @@ class Reactor():
             for s in readable:
                 try:
                     s.recv_msg()
-                except DownloadCompleteException, e:
+                except DownloadCompleteException as e:
                     return
             for s in writeable:
                 while s.has_next_msg():

@@ -1,4 +1,4 @@
-import urllib2, urllib
+import urllib
 import client
 import util
 import bencode
@@ -8,12 +8,13 @@ class Tracker():
     def __init__(self, torrent, client):
         self.torrent = torrent
         self.client = client
+
     def _make_req(self, url):
         """Return bdecoded response of an
             HTTP GET request to url.
         """
         return bencode.bdecode(
-            urllib2.urlopen(url).read()
+            urllib.request.urlopen(url).read()
             )
     def connect(self, port=6881):
         """Try to connect to tracker.
@@ -30,6 +31,7 @@ class Tracker():
             'left': self.torrent.length(),
             'event': 'started'
         }
+
         announce_url = self.torrent.info_dict['announce']
-        get_url = announce_url + "?" + urllib.urlencode(params)
+        get_url = announce_url + "?" + urllib.parse.urlencode(params)
         return self._make_req(get_url)

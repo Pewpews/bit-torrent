@@ -2,3 +2,9 @@
 *.pyc
 .torrent
 venv/
+/.vs/happy-bittorrent/v14
+*.user
+*.pyproj
+*.sln
+/env/.ptvs
+/env/Include

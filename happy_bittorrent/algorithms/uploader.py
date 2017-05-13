@@ -5,9 +5,9 @@ import random
 import time
 from typing import List, Iterable, cast
 
-from torrent_client.algorithms.peer_manager import PeerManager
-from torrent_client.models import Peer, TorrentInfo
-from torrent_client.utils import humanize_size
+from happy_bittorrent.algorithms.peer_manager import PeerManager
+from happy_bittorrent.models import Peer, TorrentInfo
+from happy_bittorrent.utils import humanize_size
 
 
 class Uploader:

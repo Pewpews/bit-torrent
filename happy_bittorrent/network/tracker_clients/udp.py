@@ -6,9 +6,9 @@ import urllib.parse
 from enum import Enum
 from typing import Optional
 
-from torrent_client.utils import get_auth_key
-from torrent_client.models import DownloadInfo
-from torrent_client.network.tracker_clients.base import BaseTrackerClient, EventType, TrackerError, \
+from happy_bittorrent.utils import get_auth_key
+from happy_bittorrent.models import DownloadInfo
+from happy_bittorrent.network.tracker_clients.base import BaseTrackerClient, EventType, TrackerError, \
     parse_compact_peers_list
 
 

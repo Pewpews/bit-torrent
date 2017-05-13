@@ -6,9 +6,9 @@ from typing import Optional, cast
 import aiohttp
 import bencodepy
 
-from torrent_client.utils import get_auth_key
-from torrent_client.models import Peer, DownloadInfo
-from torrent_client.network.tracker_clients.base import BaseTrackerClient, TrackerError, parse_compact_peers_list, \
+from happy_bittorrent.utils import get_auth_key
+from happy_bittorrent.models import Peer, DownloadInfo
+from happy_bittorrent.network.tracker_clients.base import BaseTrackerClient, TrackerError, parse_compact_peers_list, \
     EventType
 
 

@@ -12,7 +12,7 @@ from typing import List, Set, cast, Optional, Dict, Union, Any, Iterator
 import bencodepy
 from bitarray import bitarray
 
-from torrent_client.utils import grouper
+from happy_bittorrent.utils import grouper
 
 
 def generate_peer_id():

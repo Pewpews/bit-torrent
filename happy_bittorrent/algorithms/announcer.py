@@ -3,10 +3,10 @@ import logging
 import aiohttp
 from typing import Optional
 
-from torrent_client.algorithms.peer_manager import PeerManager
-from torrent_client.models import TorrentInfo
-from torrent_client.network import BaseTrackerClient, EventType, create_tracker_client
-from torrent_client.network.tracker_clients.base import TrackerError
+from happy_bittorrent.algorithms.peer_manager import PeerManager
+from happy_bittorrent.models import TorrentInfo
+from happy_bittorrent.network import BaseTrackerClient, EventType, create_tracker_client
+from happy_bittorrent.network.tracker_clients.base import TrackerError
 
 
 class Announcer:

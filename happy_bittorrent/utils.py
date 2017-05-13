@@ -1,11 +1,11 @@
 from math import floor, log
 from typing import List, TypeVar, Sequence
 
-
+AUTH_KEY = ''
 T = TypeVar('T', Sequence, memoryview)
 
 def get_auth_key(announce_url, port = None):
-    return ''
+    return AUTH_KEY
 
 def grouper(arr: T, group_size: int) -> List[T]:
     # Yield successive n-sized chunks from l.

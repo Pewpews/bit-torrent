@@ -10,8 +10,8 @@ import multiprocessing as mp
 from contextlib import closing, suppress
 from functools import partial
 
-from torrent_client.control import ControlManager, ControlClient, ControlServer, DaemonExit, formatters
-from torrent_client.models import TorrentInfo, TorrentState
+from happy_bittorrent.control import ControlManager, ControlClient, ControlServer, DaemonExit, formatters
+from happy_bittorrent.models import TorrentInfo, TorrentState
 
 
 logging.basicConfig(format='%(levelname)s %(asctime)s %(name)-23s %(message)s', datefmt='%H:%M:%S')
@@ -37,7 +37,7 @@ def run_daemon(_):
         try:
             control.load_state()
         except Exception as err:
-            logging.warning('Failed to load program state: %r', err)
+            logging.exception('Failed to load program state: %r', err)
         control.invoke_state_dumps()
 
         stopping = False

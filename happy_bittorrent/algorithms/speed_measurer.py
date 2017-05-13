@@ -1,8 +1,8 @@
 import asyncio
 from collections import deque
 
-from torrent_client.models import SessionStatistics
-from torrent_client.utils import import_signals
+from happy_bittorrent.models import SessionStatistics
+from happy_bittorrent.utils import import_signals
 
 
 QObject, pyqtSignal = import_signals()

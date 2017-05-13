@@ -1,9 +1,9 @@
 from urllib.parse import urlparse
 
-from torrent_client.models import DownloadInfo
-from torrent_client.network.tracker_clients.base import *
-from torrent_client.network.tracker_clients.http import *
-from torrent_client.network.tracker_clients.udp import *
+from happy_bittorrent.models import DownloadInfo
+from happy_bittorrent.network.tracker_clients.base import *
+from happy_bittorrent.network.tracker_clients.http import *
+from happy_bittorrent.network.tracker_clients.udp import *
 
 
 def create_tracker_client(announce_url: str, download_info: DownloadInfo, our_peer_id: bytes) -> BaseTrackerClient:

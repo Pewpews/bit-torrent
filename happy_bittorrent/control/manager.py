@@ -5,10 +5,10 @@ import os
 import pickle
 from typing import Dict, List, Optional
 
-from torrent_client.algorithms import TorrentManager
-from torrent_client.models import generate_peer_id, TorrentInfo, TorrentState
-from torrent_client.network import PeerTCPServer
-from torrent_client.utils import import_signals
+from happy_bittorrent.algorithms import TorrentManager
+from happy_bittorrent.models import generate_peer_id, TorrentInfo, TorrentState
+from happy_bittorrent.network import PeerTCPServer
+from happy_bittorrent.utils import import_signals
 
 
 QObject, pyqtSignal = import_signals()

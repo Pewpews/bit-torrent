@@ -3,15 +3,15 @@ import logging
 import random
 from typing import List, Optional
 
-from torrent_client.algorithms.announcer import Announcer
-from torrent_client.algorithms.downloader import Downloader
-from torrent_client.algorithms.peer_manager import PeerManager
-from torrent_client.algorithms.speed_measurer import SpeedMeasurer
-from torrent_client.algorithms.uploader import Uploader
-from torrent_client.file_structure import FileStructure
-from torrent_client.models import Peer, TorrentInfo, DownloadInfo
-from torrent_client.network import EventType, PeerTCPClient
-from torrent_client.utils import import_signals
+from happy_bittorrent.algorithms.announcer import Announcer
+from happy_bittorrent.algorithms.downloader import Downloader
+from happy_bittorrent.algorithms.peer_manager import PeerManager
+from happy_bittorrent.algorithms.speed_measurer import SpeedMeasurer
+from happy_bittorrent.algorithms.uploader import Uploader
+from happy_bittorrent.file_structure import FileStructure
+from happy_bittorrent.models import Peer, TorrentInfo, DownloadInfo
+from happy_bittorrent.network import EventType, PeerTCPClient
+from happy_bittorrent.utils import import_signals
 
 
 QObject, pyqtSignal = import_signals()

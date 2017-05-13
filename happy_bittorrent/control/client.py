@@ -2,8 +2,8 @@ import asyncio
 import logging
 from typing import Callable, TypeVar
 
-from torrent_client.control.manager import ControlManager
-from torrent_client.control.server import ControlServer
+from happy_bittorrent.control.manager import ControlManager
+from happy_bittorrent.control.server import ControlServer
 
 
 __all__ = ['ControlClient']

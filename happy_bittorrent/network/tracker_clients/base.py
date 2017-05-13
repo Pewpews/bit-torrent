@@ -1,8 +1,8 @@
 from enum import Enum
 from typing import List, Optional
 
-from torrent_client.models import DownloadInfo, Peer
-from torrent_client.utils import grouper
+from happy_bittorrent.models import DownloadInfo, Peer
+from happy_bittorrent.utils import grouper
 
 
 __all__ = ['EventType', 'TrackerError', 'BaseTrackerClient']

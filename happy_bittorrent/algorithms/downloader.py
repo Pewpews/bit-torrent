@@ -7,12 +7,12 @@ from collections import deque, OrderedDict
 from math import ceil
 from typing import List, Optional, Tuple, Iterator
 
-from torrent_client.algorithms.announcer import Announcer
-from torrent_client.algorithms.peer_manager import PeerData, PeerManager
-from torrent_client.file_structure import FileStructure
-from torrent_client.models import BlockRequestFuture, Peer, TorrentInfo, TorrentState
-from torrent_client.network import EventType
-from torrent_client.utils import floor_to, import_signals
+from happy_bittorrent.algorithms.announcer import Announcer
+from happy_bittorrent.algorithms.peer_manager import PeerData, PeerManager
+from happy_bittorrent.file_structure import FileStructure
+from happy_bittorrent.models import BlockRequestFuture, Peer, TorrentInfo, TorrentState
+from happy_bittorrent.network import EventType
+from happy_bittorrent.utils import floor_to, import_signals
 
 
 QObject, pyqtSignal = import_signals()

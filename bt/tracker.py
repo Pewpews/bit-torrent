@@ -1,7 +1,8 @@
 import urllib
-import client
-import util
-import bencode
+from urllib.parse import urlencode
+from urllib.request import urlopen
+from bt import client, util
+import bcoding as bencode
 from struct import unpack
 
 class Tracker():
@@ -14,7 +15,7 @@ class Tracker():
             HTTP GET request to url.
         """
         return bencode.bdecode(
-            urllib.request.urlopen(url).read()
+            urlopen(url).read()
             )
     def connect(self, port=6881):
         """Try to connect to tracker.
@@ -33,5 +34,5 @@ class Tracker():
         }
 
         announce_url = self.torrent.info_dict['announce']
-        get_url = announce_url + "?" + urllib.parse.urlencode(params)
+        get_url = announce_url + "?" + urlencode(params)
         return self._make_req(get_url)

@@ -1,8 +1,8 @@
-from conn import MsgConnection
-from message import WireMessage
-from util import Bitfield
+from bt.conn import MsgConnection
+from bt.message import WireMessage
+from bt.util import Bitfield
 import time
-import util
+from bt import util
 import logging
 
 class Peer(object):

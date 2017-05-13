@@ -1,5 +1,5 @@
 import socket
-from message import WireMessage
+from bt.message import WireMessage
 import logging
 
 class AcceptConnection(object):

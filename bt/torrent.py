@@ -1,7 +1,7 @@
-import bencode
+import bcoding as bencode
 import math
-import util
-from files import File, Piece, Block
+from bt import util
+from bt.files import File, Piece, Block
 import logging
 
 class Torrent(object):
@@ -10,9 +10,11 @@ class Torrent(object):
            Builds client, fetches peer list, and construct peers.
         """
         self.logger = logging.getLogger('bt.torrent.Torrent')
-        with open(file_name, 'r') as f:
-            contents = f.read()
-        self.info_dict = info_dict or bencode.bdecode(contents) # If read, bdecode
+        self.info_dict = info_dict
+        if not self.info_dict:
+            with open(file_name, 'rb') as f:
+                self.info_dict = bencode.bdecode(f)
+
         self.info_hash = util.sha1_hash(
             bencode.bencode(self.info_dict['info']) # metainfo file is bencoded
             )

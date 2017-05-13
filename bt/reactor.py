@@ -1,5 +1,5 @@
 import select
-from util import DownloadCompleteException
+from bt.util import DownloadCompleteException
 import logging
 
 class Reactor():

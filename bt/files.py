@@ -1,5 +1,5 @@
 import logging
-import util
+from bt import util
 
 class Block(object):
     """Abstract away data storage.
@@ -54,6 +54,7 @@ class Piece(object):
         if self.num_blocks == 0 \
                 or self.piece_length % self.num_blocks != 0:
             self.num_blocks += 1
+        self.num_blocks = int(self.num_blocks)
         begin = 0
         for i in range(self.num_blocks):
             length = self.block_size

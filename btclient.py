@@ -55,7 +55,7 @@ if __name__ == '__main__':
     logger.addHandler(ch)
 
     # Run BitTorrent client
-    client = Client(Torrent(args.metainfo))
+    client = Client(Torrent("one.torrent"))
     client.start()
 
     if args.tests:

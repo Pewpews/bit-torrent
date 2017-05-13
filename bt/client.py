@@ -1,18 +1,18 @@
 from collections import defaultdict
-from reactor import Reactor
-from tracker import Tracker
+from bt.reactor import Reactor
+from bt.tracker import Tracker
 import socket
 import time
-import util
-from conn import AcceptConnection
-from message import WireMessage
-from peer import Peer
+from bt import util
+from bt.conn import AcceptConnection
+from bt.message import WireMessage
+from bt.peer import Peer
 import logging
 import urllib
 
 class Client(object):
-    def __init__(self, torrent):
-        self.key = None
+    def __init__(self, torrent, key=None):
+        self.key = key
         self.logger = logging.getLogger('bt.peer.client')
         self.torrent = torrent
         self.peer_id = self._gen_peer_id()

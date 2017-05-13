@@ -9,3 +9,5 @@ venv/
 /env/.ptvs
 /env/Include
 /env
+/downloads
+*.torrent

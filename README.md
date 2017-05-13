@@ -1,11 +1,16 @@
-#### A fork of Zach's BitTorrent Client to use in Happypanda X
+happy-bittorrent
+===========
 
-A BitTorrent client written in Python. Supports multi-file torrents.
+Simple BitTorrent client built with Python's asyncio
 
-This client implements a rarest-first piece download strategy. That is, the client will attempt to download those pieces that are least common in the swarm before it downloads the more-common pieces.
+Changes
+------
 
-#### Changes
+- Modified http tracker announce to include 'key'
+- Fixed some bugs
 
-- Port to Python 3
-- Add key auth in tracker request
-- Refactor
+
+Author
+------
+
+Copyright (c) 2016 Alexander Borzunov

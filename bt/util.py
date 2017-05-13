@@ -5,11 +5,12 @@ import logging
 class DownloadCompleteException(Exception):
     pass
 
-def sha1_hash(string):
+def sha1_hash(s):
     """Return 20-byte sha1 hash of string.
     """
-    return hashlib
-    return hashlib.sha1(bytes(string, encoding='utf-8')).digest()
+    if isinstance(s, str):
+        s = s.encode('utf-8')
+    return hashlib.sha1(s).digest()
 
 class Bitfield(object):
     def __init__(self, bool_array):

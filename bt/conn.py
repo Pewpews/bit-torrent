@@ -15,6 +15,7 @@ class AcceptConnection(object):
                 )
         self.socket.bind(('localhost', bind_to))
         self.socket.listen(5)
+
     def recv_msg(self, msg):
         msg_type, msg_contents = WireMessage.decode(msg)
         if msg_type == 'handshake':
@@ -40,6 +41,7 @@ class MsgConnection(object):
             self.socket = socket
     def mark_bad(self):
         self.parent.mark_bad()
+
     def connect(self, ip, port, timeout=2):
         self.ip = ip
         self.port = port

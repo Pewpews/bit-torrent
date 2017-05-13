@@ -17,7 +17,7 @@ QObject, pyqtSignal = import_signals()
 __all__ = ['ControlManager']
 
 
-state_filename = '.torrent_state'
+state_filename = '.tstate'
 
 
 logger = logging.getLogger(__name__)

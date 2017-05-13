@@ -10,7 +10,7 @@ setup(
     version=version,
     url='https://github.com/Pewpews/happy-bittorrent',
     license='MIT',
-    author='Pewpews',
+    author='Pewpew',
     author_email='pew@pewpew.com',
     description="Simple BitTorrent client built with Python's asyncio for use in HPX",
     packages=find_packages(),
